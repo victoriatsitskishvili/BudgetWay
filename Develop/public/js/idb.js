@@ -41,6 +41,7 @@ request.onupgradeneeded = ({ target }) => {
   
     getAll.onsuccess = function() {
       if (getAll.result.length > 0) {
+          // send to server // 
         fetch("/api/transaction/bulk", {
           method: "POST",
           body: JSON.stringify(getAll.result),
