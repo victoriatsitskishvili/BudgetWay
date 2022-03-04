@@ -2,18 +2,16 @@
 The application that gives users a fast and easy way to track their money offline.
 
 ## Heroku URL
-
+https://budgetway2121.herokuapp.com/
 
 ## GitHub URL
 https://github.com/victoriatsitskishvili/BudgetWay
 
-  ## Description
-
+## Description
 A budget tracker application that allows for offline access and functionality.
 
 ## SS 
-
-<img width="468" alt="Screen Shot 2022-03-04 at 10 52 52 AM" src="https://user-images.githubusercontent.com/89715481/156795931-028057cb-5a95-4272-965e-965a6a70c2f1.png">
+<img width="992" alt="Screen Shot 2022-03-04 at 6 57 00 PM" src="https://user-images.githubusercontent.com/89715481/156857535-36a1cd8b-41e5-474a-9a58-92b99b75859a.png">
 
 ## Table of Contents 
   
