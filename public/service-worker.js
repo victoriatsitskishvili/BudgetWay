@@ -10,6 +10,7 @@ const FILES_TO_CACHE = [
     "./icons/icon-72x72.png",
     "./icons/icon-96x96.png",
     "./icons/icon-128x128.png",
+    "https://cdn.jsdelivr.net/npm/chart.js@2.8.0",
     "./icons/icon-144x144.png",
     "./icons/icon-152x152.png",
     "./icons/icon-192x192.png",
@@ -17,24 +18,7 @@ const FILES_TO_CACHE = [
     "./icons/icon-512x512.png"
 ];
 
-// Respond with cached resources //
-self.addEventListener('fetch', function (e) {
-  console.log('fetch request : ' + e.request.url)
-  e.respondWith(
-    caches.match(e.request).then(function (request) {
-      if (request) { // if cache is available, respond with cache //
-        console.log('responding with cache : ' + e.request.url)
-        return request
-      } else {       // if there are no cache, try fetching request //
-        console.log('file is not cached, fetching : ' + e.request.url)
-        return fetch(e.request)
-      }
 
-      // You can omit if/else for console.log & put one line below like this too.
-      // return request || fetch(e.request) //
-    })
-  )
-})
 
 // Cache resources //
 self.addEventListener('install', function (e) {
@@ -67,3 +51,22 @@ self.addEventListener('activate', function (e) {
     })
   );
 });
+
+// Respond with cached resources //
+self.addEventListener('fetch', function (e) {
+  console.log('fetch request : ' + e.request.url)
+  e.respondWith(
+    caches.match(e.request.url).then(function (response) {
+      if (response) { // if cache is available, respond with cache //
+        console.log('responding with cache : ' + e.request.url)
+        return response
+      } else {       // if there are no cache, try fetching request //
+        console.log('file is not cached, fetching : ' + e.request.url)
+        return fetch(e.request)
+      }
+
+      // You can omit if/else for console.log & put one line below like this too.
+      // return request || fetch(e.request) //
+    })
+  )
+})
